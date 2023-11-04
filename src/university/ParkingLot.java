@@ -13,6 +13,28 @@ public class ParkingLot {
     System.out.println("ParkingLot" + this.name + " has " + this.numberOfParkingSpots + " spots.");
   }
 
+  @Override
+  public String toString() {
+    return "ParkingLot" + this.name + " has " + this.numberOfParkingSpots + " spots.";
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    ParkingLot parkingLot = (ParkingLot) obj;
+
+
+    if (this.name == parkingLot.name && this.numberOfParkingSpots == parkingLot.numberOfParkingSpots) {
+      return true;
+    }
+
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return 300;
+  }
+
 
   public String getName() {
     return name;

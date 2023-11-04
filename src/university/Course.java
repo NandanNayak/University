@@ -1,6 +1,8 @@
 package university;
 
 public class Course {
+
+  public static int instanceCount = 0;
   private String name;
   private String id;
 
@@ -27,5 +29,27 @@ public class Course {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  @Override
+  public String toString() {
+    return "Course " + this.name + " has an id " + this.id + ".";
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    Course course = (Course) obj;
+
+
+    if (this.name == course.name && this.id == course.id) {
+      return true;
+    }
+
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return 200;
   }
 }

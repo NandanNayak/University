@@ -26,6 +26,28 @@ public class Program {
     }
   }
 
+  @Override
+  public String toString() {
+    return "Program " + this.name + " starts on " + this.startDate + ".";
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    Program program = (Program) obj;
+
+
+    if (this.name == program.name) {
+      return true;
+    }
+
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return 700;
+  }
+
   public String getName() {
     return name;
   }

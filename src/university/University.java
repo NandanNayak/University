@@ -44,6 +44,7 @@ public class University {
     final Professor joe = new Professor("Joe", LocalDate.of(1950, 11, 1), 11);
     final Professor donald = new Professor("Donald", LocalDate.of(1960, 1,12), 12);
     final Professor george = new Professor("George", LocalDate.of(1970, 2,21), 13);
+    final Professor barack = new Professor("Joe", LocalDate.of(1950, 11, 1), 11);
 
     professors.add(joe);
     professors.add(donald);
@@ -72,7 +73,6 @@ public class University {
 
     programs.add(csProgram);
     programs.add(qaProgram);
-
   }
 
   public void setBuildings(ArrayList<Building> buildings) {
