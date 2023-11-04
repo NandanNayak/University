@@ -1,14 +1,10 @@
 package university;
 
-public class Playground {
+public class Playground implements Name {
   private String name;
 
   public Playground(final String name) {
     this.name = name;
-  }
-
-  public void whoami() {
-    System.out.println("This playground is a " + this.name);
   }
 
   @Override
@@ -33,10 +29,12 @@ public class Playground {
     return 500;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public void setName(String name) {
     this.name = name;
   }

@@ -3,26 +3,15 @@ package university;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public abstract class Person {
+public abstract class Person implements Name, Id {
   protected String name;
   protected LocalDate dateOfBirth;
-  protected int id;
+  protected String id;
 
-  public Person(final String name, final LocalDate dateOfBirth, int id) {
+  public Person(final String name, final LocalDate dateOfBirth, String id) {
     this.name = name;
     this.dateOfBirth = dateOfBirth;
     this.id = id;
-  }
-
-  public abstract void teach();
-
-  public abstract void study();
-
-
-  public void whoami() {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    String formattedDate = formatter.format(this.getDateOfBirth());
-    System.out.println(String.format(this.getName() + " whose id is " + this.getId() + " was born on " + formattedDate ));
   }
 
   @Override
@@ -49,10 +38,12 @@ public abstract class Person {
     return 400;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public void setName(String name) {
     this.name = name;
   }
@@ -65,11 +56,11 @@ public abstract class Person {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public int getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 

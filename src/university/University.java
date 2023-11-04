@@ -1,5 +1,6 @@
 package university;
 
+import javax.sound.sampled.Port;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -12,6 +13,8 @@ public class University {
   private ArrayList<Program> programs;
 
   public University() {
+
+    Name name;
     this.buildings = new ArrayList<>();
     this.parkingLots = new ArrayList<>();
     this.playgrounds = new ArrayList<>();
@@ -41,17 +44,16 @@ public class University {
     playgrounds.add(trackfield);
     playgrounds.add(soccerfield);
 
-    final Professor joe = new Professor("Joe", LocalDate.of(1950, 11, 1), 11);
-    final Professor donald = new Professor("Donald", LocalDate.of(1960, 1,12), 12);
-    final Professor george = new Professor("George", LocalDate.of(1970, 2,21), 13);
-    final Professor barack = new Professor("Joe", LocalDate.of(1950, 11, 1), 11);
+    final Professor joe = new Professor("Joe", LocalDate.of(1950, 11, 1), "11", "Java");
+    final Professor donald = new Professor("Donald", LocalDate.of(1960, 1,12), "12", "DBMS");
+    final Professor george = new Professor("George", LocalDate.of(1970, 2,21), "13", "Software Testing");
 
     professors.add(joe);
     professors.add(donald);
     professors.add(george);
 
-    final Student tom = new Student("Tom", LocalDate.of(1991,4,6), 21);
-    final Student jerry = new Student("Jerry", LocalDate.of(1992, 2, 26), 22);
+    final Student tom = new Student("Tom", LocalDate.of(1991,4,6), "21", "Java", true);
+    final Student jerry = new Student("Jerry", LocalDate.of(1992, 2, 26), "22", "DBMS", false);
 
     students.add(tom);
     students.add(jerry);

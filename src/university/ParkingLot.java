@@ -1,16 +1,12 @@
 package university;
 
-public class ParkingLot {
+public class ParkingLot implements Name {
   private String name;
   private int numberOfParkingSpots;
 
   public ParkingLot(final String name, final int numberOfParkingSpots) {
     this.name = name;
     this.numberOfParkingSpots = numberOfParkingSpots;
-  }
-
-  public void whoami() {
-    System.out.println("ParkingLot" + this.name + " has " + this.numberOfParkingSpots + " spots.");
   }
 
   @Override
@@ -35,11 +31,12 @@ public class ParkingLot {
     return 300;
   }
 
-
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public void setName(String name) {
     this.name = name;
   }

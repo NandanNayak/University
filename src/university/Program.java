@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class Program {
+public class Program implements Name {
   private String name;
   private ArrayList<Course> courses;
 
@@ -19,10 +19,10 @@ public class Program {
   public void whoami() {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     String formattedDate = formatter.format(this.startDate);
-    System.out.println("Program " + this.name + " starts on " + this.startDate + ".");
+    System.out.println(this);
 
     for (int i = 0; i < courses.size(); i++) {
-      courses.get(i).whoami();
+      System.out.println(courses.get(i));
     }
   }
 
@@ -48,10 +48,12 @@ public class Program {
     return 700;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public void setName(String name) {
     this.name = name;
   }

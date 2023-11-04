@@ -1,8 +1,7 @@
 package university;
 
-public class Course {
+public class Course implements Name, Id {
 
-  public static int instanceCount = 0;
   private String name;
   private String id;
 
@@ -11,22 +10,13 @@ public class Course {
     this.id = id;
   }
 
-  public void whoami() {
-    System.out.println("Course " + this.name + " has an id " + this.id + ".");
-  }
 
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
+  @Override
   public String getId() {
     return id;
   }
 
+  @Override
   public void setId(String id) {
     this.id = id;
   }
@@ -51,5 +41,15 @@ public class Course {
   @Override
   public int hashCode() {
     return 200;
+  }
+
+  @Override
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 }

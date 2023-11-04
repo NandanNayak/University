@@ -3,26 +3,13 @@ package university;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Professor extends Person {
+final public class Professor extends Person implements Teach {
 
-  public Professor(final String name, final LocalDate dateOfBirth, int id) {
+  private String subject;
+
+  public Professor(final String name, final LocalDate dateOfBirth, String id, String subject) {
     super(name, dateOfBirth, id);
-  }
-
-  @Override
-  public void teach() {
-    System.out.println("Professor teaches.");
-  }
-
-  @Override
-  public void study() {
-    System.out.println("Professor does not study.");
-  }
-
-  public void whoami() {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    String formattedDate = formatter.format(this.dateOfBirth);
-    System.out.println(String.format("Professor " + this.name + " whose id is " + this.id + " was born on " + formattedDate + "."));
+    this.subject = subject;
   }
 
   @Override
@@ -37,4 +24,8 @@ public class Professor extends Person {
     return 600;
   }
 
+  @Override
+  public void teach() {
+    System.out.println("This professor teaches " + this.subject + ".");
+  }
 }
